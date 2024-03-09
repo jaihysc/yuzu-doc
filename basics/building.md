@@ -10,7 +10,7 @@ Requires: Visual Studio 2022 (older versions may work)
     git submodule update --init --recursive
     ```
 
-3. Download `glslangValidator.exe` from [glslang main-tot](https://github.com/KhronosGroup/glslang/releases), extract it somwhere and add that folder to `PATH` environmental variable. Restart your computer.
+3. Download `glslangValidator.exe` from [glslang main-tot](https://github.com/KhronosGroup/glslang/releases), extract it somewhere and add that folder to `PATH` environmental variable. Restart your computer.
 
 4. Open the Yuzu directory in Visual Studio, configure CMake cache
 
