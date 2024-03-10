@@ -62,9 +62,9 @@ Explanation of the different directories in Yuzu source code.
 | Path | Description |
 | - | - |
 | `/src/hid_core/frontend`  | Emulate Switch touch, motion, controller inputs |
-| `/src/hid_core/hidbus`    | Emulate mounts for Switch controllers (Ring-Con) |
+| `/src/hid_core/hidbus`    | Emulate special Switch devices (Ring-Con) |
 | `/src/hid_core/irsensor`  | Emulate Joy-Con IR sensor |
-| `/src/hid_core/resources` | Represents various HIDs of the Switch |
+| `/src/hid_core/resources` | Represents various HIDs of the Switch (buttons, motion sensors, etc) |
 
 | Path | Description |
 | - | - |

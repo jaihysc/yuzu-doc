@@ -14,6 +14,12 @@ Requires: Visual Studio 2022 (older versions may work)
 
 4. Open the Yuzu directory in Visual Studio, configure CMake cache
 
-5. Change the target to `yuzu.exe`
+*Building `dedicated_room`, `yuzu`, or `yuzu_cmd`*
+
+5. Change the target to `dedicated_room`, `yuzu`, or `yuzu_cmd`
 
 6. Build the project
+
+*Building Android Application*
+
+5. ??
