@@ -53,7 +53,7 @@ flowchart LR
 
 System (dfferent from System in audio) is the top-level class describing an emulated Switch. It holds the classes for all the emulated subsystems. These are primarily classes for emulating hardware and the kernel. Some other miscellaneous classes are for debugging, telemetry, and cheats.
 
-The hardware excluding the CPU is emulated as follows, CPU is handled by the kernel. Core timing is used to receive a callback at a future point in time for the emulated Switch, such as implementing CPU hardware timers. GPU emulates the Nvidia Tegra used on the Switch. host1x emulates the host1x module on the Nvidia Tegra. Device memory emulates the Switch address space. Audio core emulates audio. HID core emulates HID devices.
+The hardware excluding the CPU is emulated as follows, CPU is handled by the kernel. Core timing is used to receive a callback at a future point in time for the emulated Switch, such as implementing CPU hardware timers. GPU emulates the Nvidia Tegra used on the Switch. host1x emulates the host1x module on the Nvidia Tegra, see video core for details. Device memory emulates the Switch address space. Audio core emulates audio. HID core emulates HID devices.
 
 ```mermaid
 flowchart LR
@@ -93,3 +93,16 @@ flowchart LR
 ```
 
 ## Video Core
+
+Video core has 2 major components, host1x emulation (emulating Switch GPU) and GPU rendering for the computer running Yuzu.
+
+Host1x emulates the host1x module on the Nvidia Tegra.
+
+The renderer produces images shown to the user of the emulator. The naming here is based on [Vulkan](https://docs.vulkan.org/guide/latest/decoder_ring.html). The top-level class is `GPU`, which creates a null, OpenGL, or Vulkan renderer. The null renderer only accepts commands and does nothing for testing. The majority of the files are used for subsystems of these renderers.
+
+```mermaid
+flowchart LR
+    gpu[GPU] --> null[Null]
+    gpu --> gl[OpenGL]
+    gpu --> vk[Vulkan]
+```
